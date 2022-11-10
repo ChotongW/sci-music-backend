@@ -7,6 +7,7 @@ const port = process.env.PORT || 5000;
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const user = require("./routes/user");
+const item = require("./routes/item");
 
 var morgan = require("morgan");
 // create "morgan middleware"
@@ -21,6 +22,7 @@ app.use(
 );
 
 app.use("/user", user);
+app.use("/item", item);
 
 app.get("/", (req, res) => {
   res.send("Home page");

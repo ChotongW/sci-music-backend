@@ -12,7 +12,7 @@ router.use(
   })
 );
 
-router.get("/", userMiddleware.isLoggedIn, async (req, res) => {
+router.get("/", async (req, res) => {
   var sql = "SELECT * FROM user";
   try {
     var result = await queryDB(sql);
